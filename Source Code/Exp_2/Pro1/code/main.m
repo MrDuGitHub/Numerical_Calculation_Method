@@ -1,0 +1,14 @@
+N = 100;  TOL = 10^-4;  p0 = 2;
+disp('The function is 2*x^2+x-15=0,tolerate is 10^-4,N=100.');
+disp('If p0=2,');
+[X1,Y1] = Fixed_Point(N,TOL,p0,@(x)x-2*x*x);
+[X2,Y2] = Fixed_Point(N,TOL,p0,@(x)15/(2*x+1));
+[X3,Y3] = Fixed_Point(N,TOL,p0,@(x)x-(2*x*x+x-15)/(4*x+1));
+disp('If p0=1.9,');
+[X1_,Y1_] = Fixed_Point(N,TOL,p0-0.1,@(x)x-2*x*x);
+[X2_,Y2_] = Fixed_Point(N,TOL,p0-0.1,@(x)15/(2*x+1));
+[X3_,Y3_] = Fixed_Point(N,TOL,p0-0.1,@(x)x-(2*x*x+x-15)/(4*x+1));
+disp('If p0=2.1,');
+[X1__,Y1__] = Fixed_Point(N,TOL,p0+0.1,@(x)x-2*x*x);
+[X2__,Y2__] = Fixed_Point(N,TOL,p0+0.1,@(x)15/(2*x+1));
+[X3__,Y3__] = Fixed_Point(N,TOL,p0+0.1,@(x)x-(2*x*x+x-15)/(4*x+1));
